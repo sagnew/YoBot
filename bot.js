@@ -1,14 +1,5 @@
-var irc = require("irc");
-
-var buttons = {
-  "up": "w",
-  "down": "s",
-  "left": "a",
-  "right": "d",
-  "a": "z",
-  "b": "x",
-  "start": "c"
-};
+var irc = require("irc"),
+    yo = require('./yo');
 
 var config = {
   channels: ["#hackny"],
@@ -20,12 +11,8 @@ var bot = new irc.Client(config.server, config.botName, {
   channels: config.channels
 });
 
-var yoAll = function() {
-  console.log("YOALL");
-};
-
 bot.addListener("message", function(from, to, text, message) {
   if( text === "YO" ) {
-    yoAll();
+    yo.yoAll();
   }
 });
