@@ -16,3 +16,5 @@ bot.addListener("message", function(from, to, text, message) {
     yo.yoAll();
   }
 });
+
+module.exports = bot;
