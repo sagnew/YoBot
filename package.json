@@ -1,0 +1,26 @@
+{
+  "name": "YoBot",
+  "version": "0.0.1",
+  "description": "An IRC bot that sends a Yo to your personal Yo account whenever you are messaged in a specific IRC chatroom or Groupme room.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "irc": "^0.3.7",
+    "request": "^2.36.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagnew/YoBot.git"
+  },
+  "keywords": [
+    "Yo"
+  ],
+  "author": "Sagnew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagnew/YoBot/issues"
+  },
+  "homepage": "https://github.com/sagnew/YoBot"
+}
