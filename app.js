@@ -1,13 +1,22 @@
 var express = require('express'),
+    bodyParser = require('body-parser')
     app = express(),
-    bot = require('./bot');
+    ircBot = require('./ircBot');
+    groupmeBot = require('./groupmeBot')
 
-  app.get('/', function(req, res) {
-    console.log(req.query);
-    console.log(req.body);
-    console.log(req.params);
-    bot.say('#hackny', "YO");
-  });
+app.use(bodyParser.json());
+
+app.get('/', function(req, res) {
+  console.log(req.query);
+  console.log(req.body);
+  console.log(req.params);
+  ircBot.say('#hackny', "YO");
+  groupmeBot.say("YO");
+});
+
+app.post('/groupme_callback', function(req, res) {
+  groupmeBot.messaged(req.body.name, undefined, req.body.text)
+});
 
 app.listen(2000);
 console.log('Listening on port 2000');
